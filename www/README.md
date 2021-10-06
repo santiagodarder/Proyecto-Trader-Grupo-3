@@ -4,6 +4,18 @@ Tarea de Git	Notas	Comandos de Git
 Dile a Git quien eres	Configure el nombre del autor y la dirección de correo electrónico que se utilizarán con sus confirmaciones.
 Tenga en cuenta que Git quita algunos caracteres (por ejemplo, puntos finales) de user.name.
 
+
+aaaaaa
+
+FRAMEWORK7
+
+https://framework7.io/docs/grid.html
+
+https://framework7.io/docs/swiper.html
+
+
+aaaaaaa
+
 git config --global user.name "Sam Smith"
 git config --global user.email sam@example.com
 
