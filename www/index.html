@@ -122,7 +122,37 @@
         </div>
     </div>
 
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            // ...
+        })
+        .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        });
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDwtAa3nR9BOjwEHxPb3W6ELGjOmIlDbSY",
+          authDomain: "tradder3-be2cd.firebaseapp.com",
+          projectId: "tradder3-be2cd",
+          storageBucket: "tradder3-be2cd.appspot.com",
+          messagingSenderId: "632365289906",
+          appId: "1:632365289906:web:aae756e4bce3e7f6add4ab"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>

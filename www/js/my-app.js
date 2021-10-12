@@ -67,8 +67,14 @@ $$(document).on('page:init', '.page[data-name="login"]', function (e) {
   
 })
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
-  // Do something here when page with data-name="about" attribute loaded and initialized
-  console.log('index');
+// Do something here when page with data-name="about" attribute loaded and initialized
+console.log('index');
+$$("#lOk").on('click', fnLogin)
+function fnLogin(){
+  user= $$('#lMail').val();
+  pass= $$('lPass').val();
+   
+}
   
 })
 $$(document).on('page:init', '.page[data-name="busqueda"]', function (e) {
