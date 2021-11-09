@@ -24,8 +24,8 @@ var app = new Framework7({
         url: 'index.html',
       },
       {
-        path: '/login/',
-        url: 'login.html',
+        path: '/registro/',
+        url: 'registro.html',
       },
       {
         path: '/busqueda/',
@@ -61,9 +61,9 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     console.log('about');
     
 })
-$$(document).on('page:init', '.page[data-name="login"]', function (e) {
+$$(document).on('page:init', '.page[data-name="registro"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  console.log('login');
+  console.log('registro');
   
 })
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
