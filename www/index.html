@@ -10,9 +10,9 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-
-    <!-- Required meta tags-->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> 
+        
+        Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
                         </a>
                     </div>
                     <div class="right">
-                        <a href="/registro/" data-view=".page-content"><img src="img/dude.png" class="iconotradder"></a>
+                        <a href="/login/" data-view=".page-content"><img src="img/dude.png" class="iconotradder"></a>
                     </div>
                 </div>
             </div>
@@ -128,28 +128,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
-    
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-        import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-            const auth = getAuth();
-            createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            // ...
-        })
-        .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-        });
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
+
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
         apiKey: "AIzaSyBu_EePAJU1EqDSmyWrC_q1mST5vlwNg8Q",
         authDomain: "tradder-1f2ee.firebaseapp.com",
         projectId: "tradder-1f2ee",
@@ -159,8 +142,9 @@
         measurementId: "G-3ZHPKC5E03"
         };
         // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
     </script>
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
