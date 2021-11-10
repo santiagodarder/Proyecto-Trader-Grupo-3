@@ -75,16 +75,12 @@ $$(document).on('page:init', '.page[data-name="registro"]', function (e) {
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   console.log('index');
-  $$("#lOk").on('click', fnLogin)
-  function fnLogin() {
-    user = $$('#lMail').val();
-    pass = $$('lPass').val();
 
-  }
 })
 $$(document).on('page:init', '.page[data-name="login"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   console.log('login');
+  $$('#bLogin').on('click', fnLogin);
 
 })
 $$(document).on('page:init', '.page[data-name="busqueda"]', function (e) {
@@ -155,7 +151,27 @@ function fnRegistro() {
 
       // ..
     });
+}
 
+function fnLogin() {
+  // cada un@ pone su magia para recuperar el mail y la clave de un form...
+  var emailDelUser = $$('#lMail').val();
+  var passDelUser = $$('#lPass').val();
 
+  firebase.auth().signInWithEmailAndPassword(emailDelUser, passDelUser)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+
+      console.log("Bienvenid@!!! " + emailDelUser);
+      // ...
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.error(errorCode);
+      console.error(errorMessage);
+    });
 
 }

@@ -1,29 +1,64 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
 <div class="page" data-name="login">
+    <div class="page-content">
+        <div class="block-title">Full Layout / Inline Labels</div>
+        <div class="list inline-labels no-hairlines-md">
+            <ul>
+                <li class="item-content item-input">
+                    <div class="item-media">
+                        <i class="icon demo-list-icon"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title item-label">E-mail</div>
+                        <div class="item-input-wrap">
+                            <input id="lMail" type="email" placeholder="Your e-mail" />
+                            <span class="input-clear-button"></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content item-input">
+                    <div class="item-media">
+                        <i class="icon demo-list-icon"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title item-label">Password</div>
+                        <div class="item-input-wrap">
+                            <input id="lPass" type="password" placeholder="Your password" />
+                            <span class="input-clear-button"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="page-content">
+            <button id="bLogin" class="button col button-round">Round</button>
+        </div>
+    </div>
     <div class="navbar">
         <div class="navbar-inner sliding">
-        <div class="left">
-            <a href="#" class="link back">
-            <i class="icon icon-back"></i>
-            <span class="ios-only">Back</span>
-            </a>
-        </div>
-        <div class="title">About Framework7</div>
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="ios-only">Back</span>
+                </a>
+            </div>
+            <div class="title">About Framework7</div>
         </div>
     </div>
     <div class="page-content">
         <div class="block-title">Welcome to Framework7</div>
         <div class="block">
             <a href="/registro/" data-view=".page-content">registraTE app</a>
-        <br>
+            <br>
             <a href="/busqueda/" data-view=".page-content">Busqueda app</a>
-        <br>
+            <br>
             <a href="/perfil/" data-view=".page-content">Perfil app</a>
-        <br>
+            <br>
             <a href="/producto/" data-view=".page-content">Producto app</a>
-        <br>
+            <br>
         </div>
         <div class="block block-strong">
-            <p>hybrid app (Cordova or PhoneGap) or web app that looks like and feels as great native iOS or Android (Material) apps.</p>
+            <p>hybrid app (Cordova or PhoneGap) or web app that looks like and feels as great native iOS or
+                Android (Material) apps.</p>
         </div>
-</div>
+    </div>
