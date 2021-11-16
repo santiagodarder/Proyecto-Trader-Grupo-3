@@ -109,6 +109,7 @@ function fnRegistro() {
   // cada un@ pone su magia para recuperar el mail y la clave de un form...
   emailDelUser = $$('#rMail').val();
   passDelUser = $$('#rPass').val();
+  telDelUser = $$('#rTel').val();
 
   firebase.auth().createUserWithEmailAndPassword(emailDelUser, passDelUser)
     .then((userCredential) => {
@@ -122,9 +123,11 @@ function fnRegistro() {
       claveDeColeccion = emailDelUser;
 
       nombre = $$('#rNombre').val();
+      tel = $$('#rTel').val();
 
       datos = {
         nombre: nombre,
+        tel: tel,
         rol: "usuario"
       }
 
