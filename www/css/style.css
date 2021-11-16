@@ -1,0 +1,24 @@
+* {
+    color: black;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+.close{
+    width: 100%;
+}
+
+.close img {
+    width: 25px;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+}
+
+.boton button {
+    width: 75%;
+}
