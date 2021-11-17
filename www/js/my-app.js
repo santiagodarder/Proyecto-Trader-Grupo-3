@@ -40,6 +40,10 @@ var app = new Framework7({
       url: 'producto.html',
     },
     {
+      path: '/iproductos/',
+      url: 'ingreso de productos.html',
+    },
+    {
       path: '/login/',
       url: 'login.html',
     },
@@ -69,6 +73,13 @@ $$(document).on('page:init', '.page[data-name="registro"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   console.log('registro');
   $$('#bReg').on('click', fnRegistro);
+
+
+})
+$$(document).on('page:init', '.page[data-name="iproductos"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  console.log('registro');
+  $$('#bRegProd').on('click', fnRegistroDeProductos);
 
 
 })
