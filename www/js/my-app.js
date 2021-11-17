@@ -117,13 +117,13 @@ var colProductos = db.collection("Productos");
 
 function fnRegistroDeProductos() {
 
-
-  // cada un@ pone su magia para recuperar el mail y la clave de un form...
   nombreDelProd = $$('#rNombreProd').val();
   descDelProd = $$('#rDescProd').val();
   url1DelProd = $$('#rURL1').val();
   url2DelProd = $$('#rURL2').val();
   url3DelProd = $$('#rURL3').val();
+
+  console.log(url1DelProd)
 
 
 
@@ -171,6 +171,7 @@ function fnRegistro() {
       colUsuario.doc(claveDeColeccion).set(datos)
         .then(() => {
           console.log("Document successfully written!");
+          mainView.router.navigate('/login/');
         })
         .catch((error) => {
           console.error("Error writing document: ", error);
@@ -204,6 +205,7 @@ function fnLogin() {
       var user = userCredential.user;
 
       console.log("Bienvenid@!!! " + emailDelUser);
+      mainView.router.navigate('/index/');
       // ...
     })
     .catch((error) => {
