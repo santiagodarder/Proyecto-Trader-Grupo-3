@@ -113,6 +113,32 @@ var emailDelUser = "";
 
 var db = firebase.firestore();
 var colUsuario = db.collection("Usuarios");
+var colProductos = db.collection("Productos");
+
+function fnRegistroDeProductos() {
+
+
+  // cada un@ pone su magia para recuperar el mail y la clave de un form...
+  nombreDelProd = $$('#rNombreProd').val();
+  descDelProd = $$('#rDescProd').val();
+  url1DelProd = $$('#rURL1').val();
+  url2DelProd = $$('#rURL2').val();
+  url3DelProd = $$('#rURL3').val();
+
+
+
+  data = {
+    nombre: nombreDelProd,
+    desc: descDelProd,
+    url1: url1DelProd,
+    url2: url2DelProd,
+    url3: url3DelProd,
+  }
+
+  colProductos.doc(emailDelUser).set(data);
+
+
+}
 
 function fnRegistro() {
 
