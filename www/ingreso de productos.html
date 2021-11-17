@@ -1,7 +1,7 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
 <div class="page" data-name="iproductos">
   <div class="page-content"> <br>
-    <h1 class="title"> Registrarse </h1>
+    <h1 class="title"> Sube tus productos </h1>
     <div class="list inline-labels no-hairlines-md">
       <ul>
         <li class="item-content item-input">
@@ -11,53 +11,60 @@
           <div class="item-inner">
             <div class="item-title item-label">Nombre</div>
             <div class="item-input-wrap">
-              <input id="rNombre" type="text" placeholder="Tu nombre" />
-              <span class="input-clear-button"></span>
+              <textarea placeholder="Nombre"></textarea>
             </div>
           </div>
-        </li> <br>
+        </li>
         <li class="item-content item-input">
           <div class="item-media">
             <i class="icon demo-list-icon"></i>
           </div>
           <div class="item-inner">
-            <div class="item-title item-label">E-mail</div>
+            <div class="item-title item-label">Descripción</div>
             <div class="item-input-wrap">
-              <input id="rMail" type="email" placeholder="Tu mail" />
-              <span class="input-clear-button"></span>
+              <textarea placeholder="Descripción"></textarea>
             </div>
           </div>
-        </li> <br>
+        </li>
         <li class="item-content item-input">
           <div class="item-media">
             <i class="icon demo-list-icon"></i>
           </div>
           <div class="item-inner">
-            <div class="item-title item-label">Tel</div>
+            <div class="item-title item-label">URL 1</div>
             <div class="item-input-wrap">
-              <input id="rTel" type="tel" placeholder="Tu telefono" />
+              <input id="rURL1" type="url" placeholder="URL" />
               <span class="input-clear-button"></span>
             </div>
           </div>
-        </li> <br>
+        </li>
         <li class="item-content item-input">
           <div class="item-media">
             <i class="icon demo-list-icon"></i>
           </div>
           <div class="item-inner">
-            <div class="item-title item-label">Contraseña</div>
+            <div class="item-title item-label">URL 2</div>
             <div class="item-input-wrap">
-              <input id="rPass" type="password" placeholder="Tu contraseña" />
+              <input id="rURL2" type="url" placeholder="URL" />
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-media">
+            <i class="icon demo-list-icon"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title item-label">URL 3</div>
+            <div class="item-input-wrap">
+              <input id="rURL3" type="url" placeholder="URL" />
               <span class="input-clear-button"></span>
             </div>
           </div>
         </li>
     </div>
-    <div class="nocuenta">
-      <p>¿Ya tienes cuenta? <a href="/login/">Inicia sesion</a></p>
-    </div> <br>
     <div class="boton">
-      <button id="bRegProd" class="button col button-round color-green button-raised button-fill button-small">Registro</button>
+      <button id="bRegProd" class="button col button-round color-green button-raised button-fill button-small">Registro de producto</button>
     </div>
   </div>
 </div>
