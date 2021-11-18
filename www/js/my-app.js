@@ -86,6 +86,7 @@ $$(document).on('page:init', '.page[data-name="iproductos"]', function (e) {
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   console.log('index');
+  $$('#Pproductos').on('click', fnactivador);
 
 })
 $$(document).on('page:init', '.page[data-name="login"]', function (e) {
@@ -109,7 +110,8 @@ $$(document).on('page:init', '.page[data-name="producto"]', function (e) {
   console.log('producto');
 
 })
-var emailDelUser = "";
+var emailDelUser;
+var guardarEmail;
 
 var db = firebase.firestore();
 var colUsuario = db.collection("Usuarios");
@@ -117,14 +119,13 @@ var colProductos = db.collection("Productos");
 
 function fnRegistroDeProductos() {
 
+// registro de productos
+
   nombreDelProd = $$('#rNombreProd').val();
   descDelProd = $$('#rDescProd').val();
   url1DelProd = $$('#rURL1').val();
   url2DelProd = $$('#rURL2').val();
   url3DelProd = $$('#rURL3').val();
-
-  console.log(url1DelProd)
-
 
 
   data = {
@@ -135,14 +136,21 @@ function fnRegistroDeProductos() {
     url3: url3DelProd,
   }
 
+  //guarda los datos del formulario en la base de datos
   colProductos.doc(emailDelUser).set(data);
-
 
 }
 
+function fnactivador(){
+  //envio a login si no estas logeado pero sino te envía a ingreso de productos
+  if(emailDelUser == undefined){
+    mainView.router.navigate('/login/');
+  }else{
+    mainView.router.navigate('/iproductos/');
+  }
+}
+
 function fnRegistro() {
-
-
   // cada un@ pone su magia para recuperar el mail y la clave de un form...
   emailDelUser = $$('#rMail').val();
   passDelUser = $$('#rPass').val();
@@ -171,6 +179,7 @@ function fnRegistro() {
       colUsuario.doc(claveDeColeccion).set(datos)
         .then(() => {
           console.log("Document successfully written!");
+          //ya creado el usuario, envia al interesado a logearse
           mainView.router.navigate('/login/');
         })
         .catch((error) => {
@@ -195,8 +204,8 @@ function fnRegistro() {
 }
 
 function fnLogin() {
-  // cada un@ pone su magia para recuperar el mail y la clave de un form...
-  var emailDelUser = $$('#lMail').val();
+  //logeo a la app
+  emailDelUser = $$('#lMail').val();
   var passDelUser = $$('#lPass').val();
 
   firebase.auth().signInWithEmailAndPassword(emailDelUser, passDelUser)
@@ -205,6 +214,9 @@ function fnLogin() {
       var user = userCredential.user;
 
       console.log("Bienvenid@!!! " + emailDelUser);
+      //la var guarda el email del ultimo user para poder enviar productos a la base de datos
+      guardarEmail = emailDelUser;
+      //envio del usuario al inicio
       mainView.router.navigate('/index/');
       // ...
     })
