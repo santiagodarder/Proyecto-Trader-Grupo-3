@@ -194,9 +194,16 @@ function fnRegistro() {
 
       console.error(errorCode);
       console.error(errorMessage);
+      alert("Se ah producido un error al registrarse");
 
       if (errorCode == "auth/email-already-in-use") {
         console.error("el mail ya esta usado");
+        alert("El email ya se encuentra registrado");
+      }
+
+      if (errorCode == "auth/weak-password") {
+        console.error("la contraseña es demasiado corta");
+        alert("Su contraseña es demasiado corta");
       }
 
       // ..
@@ -226,6 +233,7 @@ function fnLogin() {
 
       console.error(errorCode);
       console.error(errorMessage);
+      alert("Error en el inicio de sesión");
     });
 
 }
