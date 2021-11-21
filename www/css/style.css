@@ -22,3 +22,7 @@ a {
 .boton button {
     width: 75%;
 }
+
+.productos {
+    text-align: justify;
+}

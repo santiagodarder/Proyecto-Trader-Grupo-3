@@ -180,7 +180,7 @@ function fnRegistro() {
         .then(() => {
           console.log("Document successfully written!");
           //ya creado el usuario, envia al interesado a logearse
-          mainView.router.navigate('/login/');
+          mainView.router.navigate('/perfil/');
         })
         .catch((error) => {
           console.error("Error writing document: ", error);
@@ -224,7 +224,7 @@ function fnLogin() {
       //la var guarda el email del ultimo user para poder enviar productos a la base de datos
       guardarEmail = emailDelUser;
       //envio del usuario al inicio
-      mainView.router.navigate('/index/');
+      mainView.router.navigate('/perfil/');
       // ...
     })
     .catch((error) => {
