@@ -174,7 +174,7 @@ function subir() {
           $$('#productos').append(`
           <div class="imagen">
               <a href="#" data-popup=".my-popup" class="popup-open">
-                  <div class="nomejodas">
+                  <div class="imagenproducto">
                     <img src="${doc.data().url1}" width="100%">
                   </div>
               </a>
