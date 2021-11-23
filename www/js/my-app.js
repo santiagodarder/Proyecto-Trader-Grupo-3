@@ -119,7 +119,7 @@ var colProductos = db.collection("Productos");
 
 function fnRegistroDeProductos() {
 
-// registro de productos
+  // registro de productos
 
   nombreDelProd = $$('#rNombreProd').val();
   descDelProd = $$('#rDescProd').val();
@@ -141,11 +141,11 @@ function fnRegistroDeProductos() {
 
 }
 
-function fnactivador(){
+function fnactivador() {
   //envio a login si no estas logeado pero sino te envía a ingreso de productos
-  if(emailDelUser == undefined){
+  if (emailDelUser == undefined) {
     mainView.router.navigate('/login/');
-  }else{
+  } else {
     mainView.router.navigate('/iproductos/');
   }
 }
@@ -224,7 +224,7 @@ function fnLogin() {
       //la var guarda el email del ultimo user para poder enviar productos a la base de datos
       guardarEmail = emailDelUser;
       //envio del usuario al inicio
-      mainView.router.navigate('/perfil/');
+      mainView.router.navigate('/index/');
       // ...
     })
     .catch((error) => {
