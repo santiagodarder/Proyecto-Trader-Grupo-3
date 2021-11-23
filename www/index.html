@@ -62,25 +62,8 @@
                             class="button col button-round color-green button-raised button-fill button-small">Publicar
                             Productos</button>
                     </div>
-                    <div class="block">
-                        <div class="imagen 1">
-                            <a href="#" data-popup=".my-popup" class="popup-open">
-                                <img src="/www/img/placeholder.png" width="100%">
-                            </a>
-                            <h2>"Nombre del producto / Usuario"</h2>
-                        </div> <br>
-                        <div class="imagen 2">
-                            <a href="#" data-popup=".my-popup" class="popup-open">
-                                <img src="/www/img/placeholder.png" width="100%">
-                            </a>
-                            <h2>"Nombre del producto / Usuario"</h2>
-                        </div> <br>
-                        <div class="imagen 3">
-                            <a href="#" data-popup=".my-popup" class="popup-open">
-                                <img src="/www/img/placeholder.png" width="100%">
-                            </a>
-                            <h2>"Nombre del producto / Usuario"</h2>
-                        </div> <br>
+                    <div class="block" id="productos">
+
                     </div>
                 </div>
 
@@ -95,36 +78,30 @@
                                     <div class="close">
                                         <div class="display-flex justify-content-center">
                                             <a class="link popup-close">
-                                                <img src="/www/img/exit.png"">
-                                                    </a>
-                                                </div>
-                                            </div>
+                                                <img src="/www/img/exit.png">
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class=" page-content">
-                                                <div class="block">
-                                                    <h1>"Nombre del producto"</h1><br>
-                                                    <div class="swiper-container swiper-init demo-swiper">
-                                                        <div class="swiper-wrapper">
-                                                            <div class="swiper-slide"><img
-                                                                    src="/www/img/placeholder.png" width="100%">
-                                                            </div>
-                                                            <div class="swiper-slide"><img
-                                                                    src="/www/img/placeholder.png" width="100%">
-                                                            </div>
-                                                            <div class="swiper-slide"><img
-                                                                    src="/www/img/placeholder.png" width="100%">
-                                                            </div>
-                                                        </div>
-                                                        <h2 class="productos">Lorem ipsum dolor sit amet consectetur
-                                                            adipisicing elit. Quis quaerat consectetur fuga nostrum
-                                                            rerum
-                                                            vero recusandae, quidem temporibus in ea esse consequuntur?
-                                                            Rem
-                                                            error incidunt dolore quo accusamus, voluptate unde.</h2>
-                                                    </div>
-                                                </div>
+                                </div>
+                            </div>
+                            <div class="page-content">
+                                <div class="block">
+                                    <h1 id="nombredelproducto">"Nombre del producto"</h1><br>
+                                    <div class="swiper-container swiper-init demo-swiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><img src="" width="100%" id="imagen1">
+                                            </div>
+                                            <div class="swiper-slide"><img src="" width="100%" id="imagen2">
+                                            </div>
+                                            <div class="swiper-slide"><img src="" width="100%" id="imagen3">
+                                            </div>
                                         </div>
+                                        <h2 class="productos" id="descProductos">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Quis quaerat consectetur fuga nostrum
+                                            rerum
+                                            vero recusandae, quidem temporibus in ea esse consequuntur?
+                                            Rem
+                                            error incidunt dolore quo accusamus, voluptate unde.</h2>
                                     </div>
                                 </div>
                             </div>
@@ -132,32 +109,35 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    </div>
 
 
-            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
 
 
-            <script>
-                // Your web app's Firebase configuration
-                const firebaseConfig = {
-                    apiKey: "AIzaSyBu_EePAJU1EqDSmyWrC_q1mST5vlwNg8Q",
-                    authDomain: "tradder-1f2ee.firebaseapp.com",
-                    projectId: "tradder-1f2ee",
-                    storageBucket: "tradder-1f2ee.appspot.com",
-                    messagingSenderId: "190277017151",
-                    appId: "1:190277017151:web:c5c1aefb7d3d4b96e5e28a",
-                    measurementId: "G-3ZHPKC5E03"
-                };
-                // Initialize Firebase
-                firebase.initializeApp(firebaseConfig);
-            </script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBu_EePAJU1EqDSmyWrC_q1mST5vlwNg8Q",
+            authDomain: "tradder-1f2ee.firebaseapp.com",
+            projectId: "tradder-1f2ee",
+            storageBucket: "tradder-1f2ee.appspot.com",
+            messagingSenderId: "190277017151",
+            appId: "1:190277017151:web:c5c1aefb7d3d4b96e5e28a",
+            measurementId: "G-3ZHPKC5E03"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 
-            <script type="text/javascript" src="cordova.js"></script>
-            <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
-            <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
 </body>
 
 </html>

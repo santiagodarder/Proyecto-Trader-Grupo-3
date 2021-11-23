@@ -87,6 +87,24 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   console.log('index');
   $$('#Pproductos').on('click', fnactivador);
+  subir();
+
+  $$('body').on('click', '.imagen img', function () {
+    colProductos.where('url1', '==', this.src).get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+
+        $$('#nombredelproducto').html(doc.data().nombre);
+
+        $$('#imagen1').attr('src', doc.data().url1);
+        $$('#imagen2').attr('src', doc.data().url2);
+        $$('#imagen3').attr('src', doc.data().url3);
+
+        $$('#descProductos').html(doc.data().desc);
+
+      })
+    })
+  })
 
 })
 $$(document).on('page:init', '.page[data-name="login"]', function (e) {
@@ -141,6 +159,32 @@ function fnRegistroDeProductos() {
 
 }
 
+
+function subir() {
+  colProductos.get().then((querySnapshot) => {
+    $$('#productos').html('');
+
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, " => ", doc.data());
+
+      colUsuario.doc(doc.id).get().then((document) => {
+        if (doc.exists) {
+          $$('#productos').append(`
+          <div class="imagen">
+              <a href="#" data-popup=".my-popup" class="popup-open">
+                  <img src="${doc.data().url1}" width="100%">
+              </a>
+              <h2 id="np1">"${doc.data().nombre} / ${document.data().nombre}"</h2>
+          </div> <br>
+          `)
+        }
+      })
+    });
+  });
+}
+
+
 function fnactivador() {
   //envio a login si no estas logeado pero sino te envía a ingreso de productos
   if (emailDelUser == undefined) {
@@ -180,7 +224,7 @@ function fnRegistro() {
         .then(() => {
           console.log("Document successfully written!");
           //ya creado el usuario, envia al interesado a logearse
-          mainView.router.navigate('/perfil/');
+          mainView.router.navigate('/index/');
         })
         .catch((error) => {
           console.error("Error writing document: ", error);
