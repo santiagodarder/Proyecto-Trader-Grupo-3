@@ -156,6 +156,7 @@ function fnRegistroDeProductos() {
 
   //guarda los datos del formulario en la base de datos
   colProductos.doc(emailDelUser).set(data);
+  alert("Producto registrado con exito");
 
 }
 
@@ -173,10 +174,12 @@ function subir() {
           $$('#productos').append(`
           <div class="imagen">
               <a href="#" data-popup=".my-popup" class="popup-open">
-                  <img src="${doc.data().url1}" width="100%">
+                  <div class="nomejodas">
+                    <img src="${doc.data().url1}" width="100%">
+                  </div>
               </a>
-              <h2 id="np1">"${doc.data().nombre} / ${document.data().nombre}"</h2>
-          </div> <br>
+              <h2 id="np1">"${doc.data().nombre} / ${document.data().nombre}"</h2><br>
+          </div>
           `)
         }
       })

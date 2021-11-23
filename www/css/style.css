@@ -26,3 +26,19 @@ a {
 .productos {
     text-align: justify;
 }
+
+.swiper-slide {
+    height: 300px;
+    width: 100%;
+    background-color: black;
+}
+.nomejodas {
+    height: 300px;
+}
+
+.nomejodas img {
+    height: 100%;
+}
+
+
+
