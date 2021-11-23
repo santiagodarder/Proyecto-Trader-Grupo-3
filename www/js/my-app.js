@@ -194,7 +194,7 @@ function fnRegistro() {
 
       console.error(errorCode);
       console.error(errorMessage);
-      alert("Se ah producido un error al registrarse");
+      alert("Se ha producido un error al registrarse");
 
       if (errorCode == "auth/email-already-in-use") {
         console.error("el mail ya esta usado");
