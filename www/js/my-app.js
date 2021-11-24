@@ -157,6 +157,7 @@ function fnRegistroDeProductos() {
   //guarda los datos del formulario en la base de datos
   colProductos.doc(emailDelUser).set(data);
   alert("Producto registrado con exito");
+  mainView.router.navigate('/index/');
 
 }
 
